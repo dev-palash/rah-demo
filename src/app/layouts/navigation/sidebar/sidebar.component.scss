@@ -1,0 +1,104 @@
+.sidebar {
+    will-change: width;
+    transition: width 300ms cubic-bezier(0.2, 0, 0, 1) 0s;
+    @apply h-full relative;
+  }
+  
+  .sidebar-content {
+    height: 100%;
+    left: 0px;
+    min-width: 240px;
+    overflow-x: hidden;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    @apply px-4 bg-backgroundLightest;
+    .img_container{
+        height: 2rem;
+        width: 2rem;
+        img{
+            height: 2rem;
+            width: 100%;
+        }
+    }
+  }
+  
+  .custom-bg-color {
+    background-color: #6c055e !important; 
+    color: #fff !important;
+  }
+  
+  .not-implemented {
+    top: 7px;
+    left: 40px;
+    width: 140px;
+    padding: 5px 0 5px 8px;
+    @apply bg-backgroundMedium text-textDark inline-block absolute rounded-sm uppercase opacity-0 text-xs font-bold;
+  }
+  
+  .link {
+    @apply flex items-center relative py-2 px-3 rounded-sm ;
+  
+    &:hover .not-implemented {
+      @apply opacity-100;
+    }
+  }
+  
+  .active {
+    @apply text-textLink bg-backgroundLight;
+  }
+  
+  .allowed:hover {
+    @apply text-textDarkest bg-backgroundLight;
+  }
+  
+  .not-allowed {
+    cursor: not-allowed;
+  }
+  
+  .divider {
+    @apply mt-4 pt-4 border-t-2 border-borderLight;
+  }
+  :host::ng-deep .test .p-accordion .p-accordion-content {
+    background: none;
+    color: #ffff;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    .master_child{
+      padding: 0.25rem 0.5rem 0.25rem 2.4rem;
+      // background-color:  #6c055e !important;
+      p{
+        margin: 0;
+        cursor: pointer;
+        background-color: #bab4b4;
+        padding: 0.25rem;
+      }
+      &:not(:last-child){
+        margin-bottom: 0.3rem;
+      }
+    }
+  }
+  :host::ng-deep .test .p-accordion .p-accordion-header .p-accordion-header-link{
+    background: none;
+    color: #ffff;
+    padding: 0.5rem 0 0.5rem 0.6rem;
+    border: none;
+    &:hover{
+      background-color: #fff;
+      color: black;
+      box-shadow: none;
+  
+    }
+    &:focus{
+      background-color: #fff;
+      color: black;
+      box-shadow: none;
+  
+    }
+  }
+  // :host::ng-deep .test .p-accordion .p-accordion-header:not(.p-disabled).p-highlight .p-accordion-header-link{
+  //   background: none;
+  //   color: #ffff;
+  //   border: none;
+  // }
+  

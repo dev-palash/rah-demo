@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'rah-ticketing';
+  date: Date | undefined;
+  expanded: boolean;
+  manualToggle() {
+    this.expanded = !this.expanded;
+  }
 }

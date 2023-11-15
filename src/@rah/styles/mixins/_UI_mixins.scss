@@ -1,0 +1,107 @@
+@import "../colors/colors";
+
+@mixin fontStyle($color, $fontSize, $fontWeight) {
+    color: $color;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+}
+
+@mixin displayFlex($justifyContent, $alignItems) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
+@mixin roundedImg($width, $height) {
+    width: $width;
+    height: $height;
+    border-radius: 100%;
+    overflow: hidden;
+    @include displayFlex(center, center);
+    img {
+        border-radius: 100%;
+        width: 100%;
+    }
+}
+
+@mixin mat_custom_button($bg, $width, $padding-top-bottom, $padding-left-right, $radius) {
+    background-color: $bg;
+    padding: $padding-top-bottom $padding-left-right;
+    width: $width;
+    border-radius: $radius;
+}
+
+.font_roboto {
+    font-family: "Roboto";
+    font-style: normal;
+
+    p {
+        font-family: "Roboto";
+        font-style: normal;
+    }
+}
+
+.font_nunito {
+    font-family: "Nunito";
+    font-style: normal;
+
+    p {
+        font-family: "Nunito";
+        font-style: normal;
+    }
+}
+
+@mixin scrollBar(
+    $overflowX,
+    $overflowY,
+    $scrollbarHeight,
+    $scrollbarWidth,
+    $scrollbarTrackMarginTopBottom,
+    $scrollbarTrackMarginLeftRight,
+    $scrollbarTrackBorderRadius,
+    $scrollbarTrackBG,
+    $scrollbarThumbColor: color,
+    $scrollbarThumbBorderRadius
+) {
+    overflow-x: $overflowX;
+    overflow-y: $overflowY;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+        height: $scrollbarHeight;
+        width: $scrollbarWidth;
+    }
+
+    &::-webkit-scrollbar-track {
+        margin: $scrollbarTrackMarginTopBottom $scrollbarTrackMarginLeftRight;
+        border-radius: $scrollbarTrackBorderRadius;
+        background: $scrollbarTrackBG;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: $scrollbarThumbBorderRadius;
+        background: $scrollbarThumbColor;
+        &:hover {
+            background: darken($scrollbarThumbColor, 7%);
+        }
+    }
+}
+
+.dotted_banner {
+    height: 100%;
+    background-color: var(--mat_primary);
+    background-image: radial-gradient(var(--mat_dotted_color) 7%, transparent 8%);
+    background-size: 3.5rem 3.5rem;
+    background-position: 0 0, 30px 30px;
+    background-repeat: repeat;
+}
+
+@mixin bubble_design($position, $top, $right, $bottom, $left, $zIndex, $opacity) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    z-index: $zIndex;
+    opacity: $opacity;
+}
