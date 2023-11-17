@@ -1,23 +1,16 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { IssuePrioritySelectComponent } from './issue-priority-select.component';
+import { IssuePrioritySelectComponent } from '@trungk18/project/components/add-issue-modal/issue-priority-select/issue-priority-select.component';
+import { IssuePriority } from 'src/app/@core/interfaces/issue';
 
 describe('IssuePrioritySelectComponent', () => {
   let component: IssuePrioritySelectComponent;
-  let fixture: ComponentFixture<IssuePrioritySelectComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ IssuePrioritySelectComponent ]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(IssuePrioritySelectComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  beforeEach(() => {
+    component = new IssuePrioritySelectComponent();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should be able to get Priority Icon', () => {
+    const expectedIcon = component.getPriorityIcon(IssuePriority.LOW);
+    expect(expectedIcon.value).toEqual('Low');
+    expect(expectedIcon.icon).toEqual('arrow-down');
+    expect(expectedIcon.color).toEqual('#2D8738');
   });
 });

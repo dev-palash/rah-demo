@@ -1,23 +1,39 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { AddIssueModalComponent } from './add-issue-modal.component';
+import { AddIssueModalComponent } from '@trungk18/project/components/add-issue-modal/add-issue-modal.component';
 
 describe('AddIssueModalComponent', () => {
   let component: AddIssueModalComponent;
-  let fixture: ComponentFixture<AddIssueModalComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ AddIssueModalComponent ]
-    })
-    .compileComponents();
+  const formBuilder: any = {
+    group: jasmine.createSpy('group').and.returnValue({
+      invalid: false,
+      getRawValue: jasmine.createSpy('getRawValue')
+    }),
+  };
+  const nzModalRef: any = {
+    close: jasmine.createSpy('close').and.callThrough()
+  };
+  const projectService: any = {
+    updateIssue: jasmine.createSpy('updateIssue')
+  };
+  const projectQuery: any = {};
 
-    fixture = TestBed.createComponent(AddIssueModalComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  beforeEach(() => {
+    component = new AddIssueModalComponent(
+      formBuilder,
+      nzModalRef,
+      projectService,
+      projectQuery
+    );
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should be able to initForm', () => {
+    component.initForm();
+    expect(formBuilder.group).toHaveBeenCalled();
+  });
+  it('should be able to submit Form', () => {
+    component.initForm();
+    component.submitForm();
+    expect(projectService.updateIssue).toHaveBeenCalled();
+    expect(formBuilder.group).toHaveBeenCalled();
   });
 });

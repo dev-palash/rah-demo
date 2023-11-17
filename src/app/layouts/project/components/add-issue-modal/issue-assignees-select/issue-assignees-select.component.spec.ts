@@ -1,23 +1,24 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { IssueAssigneesSelectComponent } from './issue-assignees-select.component';
+import { IssueAssigneesSelectComponent } from '@trungk18/project/components/add-issue-modal/issue-assignees-select/issue-assignees-select.component';
 
 describe('IssueAssigneesSelectComponent', () => {
   let component: IssueAssigneesSelectComponent;
-  let fixture: ComponentFixture<IssueAssigneesSelectComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ IssueAssigneesSelectComponent ]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(IssueAssigneesSelectComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  beforeEach(() => {
+    component = new IssueAssigneesSelectComponent();
+    component.users = [
+      {
+        id: 'test',
+        name: '',
+        email: '',
+        avatarUrl: '',
+        createdAt: '',
+        updatedAt: '',
+        issueIds: []
+      }
+    ];
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should be able to ', () => {
+    expect(Object.keys(component.getUser('test')).length).toEqual(7);
   });
 });

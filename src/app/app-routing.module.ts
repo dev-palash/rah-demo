@@ -7,8 +7,12 @@ const routes: Routes = [
     loadChildren: () => import('../app/layouts/master/master.module').then((m) => m.MasterModule)
   },
   {
+    path: 'project',
+    loadChildren: () => import('../app/layouts/project/project.module').then( (m)=> m.ProjectModule)
+  },
+  {
     path: '',
-    redirectTo: "master",
+    redirectTo: "project",
     pathMatch: 'full'
   }
 ];

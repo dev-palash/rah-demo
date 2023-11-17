@@ -17,13 +17,13 @@ export class SidebarComponent {
     {
       name: 'Kanban Board',
       icon: 'board',
-      url: 'board',
+      url: 'project/board',
       child: [],
     },
     {
-      name: 'Kanban Board',
+      name: 'Settings',
       icon: 'board',
-      url: 'board',
+      url: 'project/settings',
       child: [],
     },
     {
@@ -44,20 +44,20 @@ export class SidebarComponent {
       ],
     },
     {
-      name: 'Kanban Board',
+      name: 'Releases',
       icon: 'board',
       url: 'board',
       child: [],
     },
     {
-      name: 'Kanban Board',
+      name: 'Issues and Filters',
       icon: 'board',
       url: 'board',
       child: [],
     },
 
     {
-      name: 'Kanban Board',
+      name: 'Reports',
       icon: 'board',
       url: 'board',
       child: [],

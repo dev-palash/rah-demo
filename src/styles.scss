@@ -3,131 +3,134 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import 'quill/dist/quill.snow.css';
+@import '../src/app/@core/styles/custom.scss';
 .pre-bootstrapping-container {
-    @apply w-full h-full relative;
-  
-    .pre-bootstrapping-spinner {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
+  @apply w-full h-full relative;
+
+  .pre-bootstrapping-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
-  
-  body.main-content {
-    margin-bottom: 50px !important;
+}
+
+body.main-content {
+  margin-bottom: 50px !important;
+}
+
+.invalid-feedback {
+  color: red;
+}
+
+/* btn css start */
+.custom-primary {
+  background: linear-gradient(to right, #6c055e, #d91279) !important;
+  border: 1px solid #6c055e !important;
+  color: #fff;
+}
+
+.custom-btn button {
+  background: linear-gradient(to right, #6c055e, #d91279) !important;
+  border: 1px solid #6c055e !important;
+  color: #F9FAFC;
+}
+
+.cancelbtn button.p-button.p-component {
+  background: #192E3F !important;
+  border-color: #192E3F !important;
+  font-weight: 500;
+  margin-left: 30px;
+}
+
+.cancelbtn button.p-button.p-component:hover {
+  background: #192E3F !important;
+  border-color: #192E3F !important;
+}
+
+.btn-set {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 30px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-set p-button.p-element.blue-btn {
+  margin: 0;
+}
+
+
+/* btn css end */
+
+.field {
+  margin: 0 0 15px 0;
+}
+
+.p-inputtext {
+  width: 100% !important;
+}
+.user .p-inputtext {
+  border: 1px solid #AAA !important;
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+.icon-color{
+  color: #6c055e;
+}
+
+/* delete popup css start */
+
+.del-popup .p-dialog-mask {
+  justify-content: center !important;
+  align-items: center !important;
+}
+.del-popup .p-dialog {
+  min-width: 322px !important;
+  position: relative;
+  max-width: 500px !important;
+}
+.del-popup .p-dialog .p-dialog-header {
+  border-top-right-radius: 10px !important;
+  border-top-left-radius: 10px !important;
+}
+.del-popup .p-dialog .p-dialog-content:last-of-type {
+  border-bottom-right-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;
+}
+.del-popup .p-dialog .p-dialog-content {
+  text-align: center;
+}
+.p-confirm-dialog-reject {
+  background: #192E3F !important;
+  border-color: #192E3F !important;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  padding: 10px 30px;
+}
+.p-confirm-dialog-reject:hover {
+  background: #192E3F !important;
+  border-color: #192E3F !important;
+}
+.p-confirm-dialog-accept {
+  border-radius: 5px;
+  background: linear-gradient(to right, #6c055e, #d91279) !important;
+  border-color: #6c055e !important;
+  color: #F9FAFC;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 10px 30px;
+  font-family: 'Poppins', sans-serif;
+}
+.p-confirm-dialog-accept:hover {
+  background: linear-gradient(to right, #6c055e, #d91279) !important;
+  color: #ffffff;
+  border-color: #6c055e !important;
+}
+.p-tooltip {
+  max-width: fit-content !important;
   }
-  
-  .invalid-feedback {
-    color: red;
-  }
-  
-  /* btn css start */
-  .custom-primary {
-    background: linear-gradient(to right, #6c055e, #d91279) !important;
-    border: 1px solid #6c055e !important;
-    color: #fff;
-  }
-  
-  .custom-btn button {
-    background: linear-gradient(to right, #6c055e, #d91279) !important;
-    border: 1px solid #6c055e !important;
-    color: #F9FAFC;
-  }
-  
-  .cancelbtn button.p-button.p-component {
-    background: #192E3F !important;
-    border-color: #192E3F !important;
-    font-weight: 500;
-    margin-left: 30px;
-  }
-  
-  .cancelbtn button.p-button.p-component:hover {
-    background: #192E3F !important;
-    border-color: #192E3F !important;
-  }
-  
-  .btn-set {
-    margin: 0 auto;
-    text-align: center;
-    margin-top: 30px;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-  }
-  
-  .btn-set p-button.p-element.blue-btn {
-    margin: 0;
-  }
-  
-  
-  /* btn css end */
-  
-  .field {
-    margin: 0 0 15px 0;
-  }
-  
-  .p-inputtext {
-    width: 100% !important;
-  }
-  .user .p-inputtext {
-    border: 1px solid #AAA !important;
-  }
-  .cursor-pointer{
-    cursor: pointer;
-  }
-  .icon-color{
-    color: #6c055e;
-  }
-  
-  /* delete popup css start */
-  
-  .del-popup .p-dialog-mask {
-    justify-content: center !important;
-    align-items: center !important;
-  }
-  .del-popup .p-dialog {
-    min-width: 322px !important;
-    position: relative;
-    max-width: 500px !important;
-  }
-  .del-popup .p-dialog .p-dialog-header {
-    border-top-right-radius: 10px !important;
-    border-top-left-radius: 10px !important;
-  }
-  .del-popup .p-dialog .p-dialog-content:last-of-type {
-    border-bottom-right-radius: 10px !important;
-    border-bottom-left-radius: 10px !important;
-  }
-  .del-popup .p-dialog .p-dialog-content {
-    text-align: center;
-  }
-  .p-confirm-dialog-reject {
-    background: #192E3F !important;
-    border-color: #192E3F !important;
-    font-weight: 500;
-    font-family: 'Poppins', sans-serif;
-    padding: 10px 30px;
-  }
-  .p-confirm-dialog-reject:hover {
-    background: #192E3F !important;
-    border-color: #192E3F !important;
-  }
-  .p-confirm-dialog-accept {
-    border-radius: 5px;
-    background: linear-gradient(to right, #6c055e, #d91279) !important;
-    border-color: #6c055e !important;
-    color: #F9FAFC;
-    font-weight: 500;
-    font-size: 16px;
-    padding: 10px 30px;
-    font-family: 'Poppins', sans-serif;
-  }
-  .p-confirm-dialog-accept:hover {
-    background: linear-gradient(to right, #6c055e, #d91279) !important;
-    color: #ffffff;
-    border-color: #6c055e !important;
-  }
-  .p-tooltip {
-    max-width: fit-content !important;
-    }
+/* delete popup css end */
